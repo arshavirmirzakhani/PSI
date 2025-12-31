@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <link rel="icon" href="./psi.svg">
+
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        .hero-section {
+            background-color: #cbbee3;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-text {
+            font-size: 5rem;
+            font-weight: 600;
+        }
+
+        .hero-desc {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .main-section {
+            background-color: #ececec;
+            min-height: 40vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+
+        .main-header {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #422b6d;
+        }
+
+        .main-text {
+            font-size: 1rem;
+            color: #000000;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">PSI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Specs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 56px;"></div>
+
+    <section class="hero-section">
+        <div>
+            <img src="./psi.svg" alt="Logo" class="logo">
+
+            <div class="hero-text">
+                PSI
+            </div>
+            <div class="hero-desc">
+                Processed Source Instructions
+            </div>
+
+        </div>
+    </section>
+
+    <section class="main-section">
+        <div class="container">
+            <div class="main-header">
+                What is PSI?
+            </div>
+            <div class="main-text">
+                PSI is an language for defining program's behaviour, its designed to be both human and machine friendly
+                while being able to be translated into other codes like assembly or low-level codes
+            </div>
+            <div>
+                <pre><code class="language-psilang">
+module program;
+entry main;
+
+required #print;
+
+constant $str @message "Hello, World!";
+
+function sum $int $int $int;
+
+test {
+    add %result !0 !1;
+    ret %result;
+}
+
+main {
+    mov $int %x 7;
+    mov $int %y 5;
+    call sum %result %x %y;
+    sys #print @message; 
+}
+                </code></pre>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        hljs.registerLanguage('psilang', function (hljs) {
+            return {
+                name: 'PSI',
+
+                keywords: {
+                    keyword: 'module entry required constant function',
+                    literal: 'true false null'
+                },
+
+                contains: [
+                    // single-line comments
+                    {
+                        className: 'comment',
+                        begin: '//',
+                        end: '$'
+                    },
+
+                    // strings
+                    {
+                        className: 'string',
+                        begin: '"',
+                        end: '"',
+                        contains: [{ begin: '\\\\.' }]
+                    },
+
+                    // numbers
+                    {
+                        className: 'number',
+                        begin: '\\b\\d+(\\.\\d+)?\\b'
+                    }
+                ]
+            };
+        });
+
+        hljs.highlightAll();
+    </script>
+
+</body>
+
+</html>
