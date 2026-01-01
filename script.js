@@ -14,14 +14,12 @@ hljs.registerLanguage('psilang', function(hljs) {
                 begin: '//',
                 end: '$'
             },
-
+            
             // multi-line comments
-            {
-                className: 'comment',
-                begin: '/*',
-                end: '*/'
-            },
-
+            hljs.COMMENT(
+                '//\\*', // begin
+                '\\*//', // end
+            ),
             // strings
             {
                 className: 'string',
