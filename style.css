@@ -1,0 +1,98 @@
+body {
+    font-family: monospace;
+}
+
+.btn-primary,
+.btn-primary:visited {
+    background-color: #422b6d !important;
+    color: #ececec !important;
+}
+
+.btn-primary:hover {
+    background-color: #704bb5 !important;
+    color: #ececec !important;
+}
+
+.btn-primary:active {
+    background-color: #cbbee3 !important;
+    color: #ececec !important;
+}
+
+.hero-section {
+    background-color: #cbbee3;
+    min-height: 20vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.hero-desc {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.main-section {
+    background-color: #ececec;
+    min-height: 40vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.main-header {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #422b6d;
+}
+
+.main-text {
+    font-size: 1rem;
+    color: #000000;
+}
+
+.logo {
+    max-width: 200px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section {
+    background-color: #422b6d;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ececec;
+}
+
+.hljs-meta {
+    color: darkorange;
+}
+
+.hljs-local {
+    color: darkcyan;
+}
+
+.hljs-argument {
+    color: darkred;
+}
+
+.hljs-constant {
+    color: darkmagenta;
+}
+
+.hljs-type {
+    color: darkgreen;
+}

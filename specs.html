@@ -38,73 +38,24 @@
 
     <section class="hero-section">
         <div>
-            <img src="./psi.svg" alt="Logo" class="logo">
-
-            <div class="hero-text">
-                PSI
-            </div>
             <div class="hero-desc">
-                Processed Source Instructions
+                specifiction
             </div>
 
         </div>
     </section>
 
+
     <section class="main-section">
         <div class="container">
-            <div class="row">
-                <div class="col-sm main-header">
-                    What is PSI?
-                    <div class="main-text">
-                        PSI is a language for defining a program's behavior. It is designed to be both human and
-                        machine readable,
-                        while being able to translate seamlessly into other code, such as assembly or low-level
-                        op-codes.
-                    </div>
-                    Why use PSI?
-                    <div class="main-text">
-                        PSI lets you describe what a program does without depending on a specific machine or operating
-                        system.
-                        Its syntax is simple and consistent, making it easy for humans to read while remaining precise
-                        for compilers
-                        and translators. With PSI, every instruction, type, and constant is clear, ensuring programs
-                        behave predictably
-                        across different backends.
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <pre><code class="language-psilang">
-// example program
-
-module program;
-entry main; // what label program starts from
-
-// check if compiler supports following types/metas
-required #print;
-required $int;
-required $str;
-
-constant $str @message "Hello, World!";
-
-// tell compiler that sum is an function
-function $int sum $int $int;
-
-// definition of sum
-sum {
-    add %result !0 !1;
-    ret %result;
-}
-
-// definition of main
-main {
-    mov $int %x 7;
-    mov $int %y 5;
-    call sum %result %x %y;
-    sys #print @message; 
-}
-                </code></pre>
-                </div>
+            <div class="main-header">
+                0.1-ALPHA
+            </div>
+            <div class="main-text">
+                <form>
+                    <button type="submit" formaction="specs/0.1-ALPHA.html" class="btn btn-primary">Read html</button>
+                    <button type="submit" formaction="specs/0.1-ALPHA.md" class="btn btn-primary">Read text</button>
+                </form>
             </div>
         </div>
     </section>
