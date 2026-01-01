@@ -47,6 +47,11 @@
                 Processed Source Instructions
             </div>
 
+            <form>
+                <button type="submit" formaction="specs/0.1-ALPHA.html" class="btn btn-primary">Read specs
+                    (0.1-ALPHA)</button>
+            </form>
+
         </div>
     </section>
 
@@ -80,14 +85,14 @@
 module program;
 entry main; // what label program starts from
 
-// check if compiler supports following types/metas
+// check if backend supports following types/metas
 required #print;
 required $int;
 required $str;
 
 constant $str @message "Hello, World!";
 
-// tell compiler that sum is an function
+// tell backend that sum is a function
 function $int sum $int $int;
 
 // definition of sum
@@ -111,81 +116,12 @@ main {
 
     <section class="footer-section">
         <div class="container">
+            <div class="h5">MIT licensed</div>
             <div class="h5">Made By Arshavir Mirzakhani</div>
         </div>
     </section>
 
-
-
-
-    <script>
-        hljs.registerLanguage('psilang', function (hljs) {
-            return {
-                name: 'PSI',
-
-                keywords: {
-                    keyword: 'module entry required constant function',
-                    literal: 'true false null'
-                },
-
-                contains: [
-                    // single-line comments
-                    {
-                        className: 'comment',
-                        begin: '//',
-                        end: '$'
-                    },
-
-                    // strings
-                    {
-                        className: 'string',
-                        begin: '"',
-                        end: '"',
-                        contains: [{ begin: '\\\\.' }]
-                    },
-
-                    // numbers
-                    {
-                        className: 'number',
-                        begin: '\\b\\d+(\\.\\d+)?\\b'
-                    },
-
-                    // type
-                    {
-                        className: 'type',
-                        begin: '\\$[a-zA-z_][a-zA-z0-9_]*',
-                    },
-
-                    // locals
-                    {
-                        className: 'local',
-                        begin: '\\%[a-zA-z_][a-zA-z0-9_]*',
-                    },
-
-                    // constants
-                    {
-                        className: 'constant',
-                        begin: '\\@[a-zA-z_][a-zA-z0-9_]*',
-                    },
-
-                    // metas
-                    {
-                        className: 'meta',
-                        begin: '\\#[a-zA-z_][a-zA-z0-9_]*',
-                    },
-
-                    // argument
-                    {
-                        className: 'argument',
-                        begin: '\\![0-9]*',
-                    },
-
-                ]
-            };
-        });
-
-        hljs.highlightAll();
-    </script>
+    <script src="./script.js"></script>
 
 </body>
 
